@@ -19,5 +19,9 @@ public class EventListDTO {
 	 */
 	private EventListDTO() {
 	}
+
+	public boolean isEmpty() {
+		return eventDTOs.isEmpty();
+	}
 	
 }
