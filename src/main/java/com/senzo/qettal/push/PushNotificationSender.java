@@ -1,6 +1,7 @@
 package com.senzo.qettal.push;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import com.amazonaws.services.sns.AmazonSNS;
@@ -15,6 +16,8 @@ public class PushNotificationSender {
 	private AmazonSNS sns;
 	@Autowired
 	private ObjectMapper jackson;
+	@Value("${aws.sns.topic.allDevices}")
+	private String allDevicesTopic;
 	
 	public void send(EventListDTO events) {
 		if(events.isEmpty()){
@@ -22,7 +25,7 @@ public class PushNotificationSender {
 		}
 		try {
 			PushNotificationDTO push = new PushNotificationDTO("Que tal?", "Temos novos eventos para você");
-			PublishRequest request = new PublishRequest("arn:aws:sns:us-east-1:417703597935:qettal_alldevices_MOBILEHUB_1994879436", jackson.writeValueAsString(push));
+			PublishRequest request = new PublishRequest(allDevicesTopic, jackson.writeValueAsString(push));
 			sns.publish(request);
 		} catch (JsonProcessingException e) {
 			throw new RuntimeException(e);
