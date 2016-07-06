@@ -1,8 +1,11 @@
 spring.jackson.serialization.write_dates_as_timestamps=false
 
-aws.accessKey=
-aws.secretKey=
+cloud.aws.credentials.instanceProfile=false
+
+cloud.aws.credentials.accessKey=
+cloud.aws.credentials.secretKey=
+
+cloud.aws.region.static=us-east-1
 aws.sns.topic.allDevices=arn:aws:sns:us-east-1:977107734260:qettal-all-devices
-aws.region=us-east-1
 
 server.port=8081
