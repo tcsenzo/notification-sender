@@ -1,4 +1,4 @@
-package com.senzo.qettal.push;
+package com.senzo.qettal.event;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

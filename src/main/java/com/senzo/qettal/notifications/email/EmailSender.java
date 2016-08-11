@@ -1,4 +1,4 @@
-package com.senzo.qettal.push;
+package com.senzo.qettal.notifications.email;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -8,9 +8,11 @@ import com.amazonaws.services.sns.AmazonSNS;
 import com.amazonaws.services.sns.model.PublishRequest;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.senzo.qettal.event.EventListDTO;
+import com.senzo.qettal.notifications.NotificationSender;
 
 @Component
-public class PushNotificationSender {
+public class EmailSender implements NotificationSender{
 
 	@Autowired
 	private AmazonSNS sns;
@@ -24,7 +26,7 @@ public class PushNotificationSender {
 			return;
 		}
 		try {
-			PushNotificationDTO push = new PushNotificationDTO("Que tal?", "Temos novos eventos para você");
+			EmailDTO push = new EmailDTO("Que tal?", "Temos novos eventos para você");
 			PublishRequest request = new PublishRequest(allDevicesTopic, jackson.writeValueAsString(push));
 			sns.publish(request);
 		} catch (JsonProcessingException e) {
