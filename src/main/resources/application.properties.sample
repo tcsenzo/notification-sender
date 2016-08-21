@@ -1,11 +1,21 @@
-spring.jackson.serialization.write_dates_as_timestamps=false
-
 cloud.aws.credentials.instanceProfile=false
-
 cloud.aws.credentials.accessKey=
 cloud.aws.credentials.secretKey=
-
 cloud.aws.region.static=us-east-1
+
 aws.sns.topic.allDevices=arn:aws:sns:us-east-1:977107734260:qettal-all-devices
+
+spring.jackson.serialization.write_dates_as_timestamps=false
+
+spring.mail.protocol=smtp
+spring.mail.test-connection=false
+spring.mail.host=smtp.gmail.com
+spring.mail.port=587
+spring.mail.username=
+spring.mail.password=
+spring.mail.default-encoding=UTF-8
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.starttls.enable=true
+spring.mail.properties.mail.smtp.starttls.required=true
 
 server.port=8081

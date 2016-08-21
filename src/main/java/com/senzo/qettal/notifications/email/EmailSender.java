@@ -28,7 +28,7 @@ public class EmailSender implements NotificationSender {
 			return;
 		}
 		SimpleMailMessage msg = new SimpleMailMessage();
-		msg.setFrom("leocwolter@gmail.com");
+		msg.setFrom("qettal.senzo@gmail.com");
 		msg.setTo("leocwolter@gmail.com");
 		msg.setSubject("Que tal?");
 		msg.setText("Temos novos eventos para você");
