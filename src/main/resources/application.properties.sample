@@ -19,3 +19,5 @@ spring.mail.properties.mail.smtp.starttls.enable=true
 spring.mail.properties.mail.smtp.starttls.required=true
 
 server.port=8081
+
+url.theaterEvents=http://localhost:8080/events
