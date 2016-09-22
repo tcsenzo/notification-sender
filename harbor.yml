@@ -1,0 +1,12 @@
+imagetag: leocwolter/notifications
+downloadpath: build
+s3:
+  bucket: prod.qettal.config
+  basepath: notifications
+files:
+  - s3path: application.properties
+    filename: application.properties
+    permission: 0644
+commands:
+  - mvn clean package
+  - cp target/notification-sender*.jar build/notifications.jar

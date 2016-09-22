@@ -1,3 +1,27 @@
+## How to deploy
+
+### Locally
+- harbor
+
+### At ec2
+- Pull the new version 
+
+```bash
+docker pull leocwolter/notifications
+```
+
+- Stop and remove the running container
+```
+docker stop notifications
+docker rm notifications
+```
+
+- Run the container:
+
+```bash
+docker run --name notifications -d leocwolter/notifications
+```
+
 ## How to setup
 
 - Import the project as an Existing Maven Project at eclipse
