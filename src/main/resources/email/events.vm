@@ -1,0 +1,12 @@
+<html>
+    <body>
+        <p>Olá, Você está procurando algo para fazer? Aqui estão nossas recomendações!</p>
+        <dl>
+	        #foreach( $event in $events )
+			    <dt>${event.name}</dt>
+			    <dd>${event.description}</dd>
+				<dd>${event.scheduledDate}</dd>
+			#end
+        </dl>
+    </body>
+</html>

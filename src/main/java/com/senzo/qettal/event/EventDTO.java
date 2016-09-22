@@ -1,7 +1,7 @@
 package com.senzo.qettal.event;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -18,7 +18,7 @@ public class EventDTO {
 	@JsonProperty
 	private BigDecimal price;
 	@JsonProperty("scheduled_date")
-	private LocalDateTime scheduledDate;
+	private Instant scheduledDate;
 	
 	/**
 	 * @deprecated Jackson eyes only
@@ -26,11 +26,23 @@ public class EventDTO {
 	EventDTO() {
 	}
 	
-	public EventDTO(String name, String description, BigDecimal price, LocalDateTime scheduledDate) {
+	public EventDTO(String name, String description, BigDecimal price, Instant scheduledDate) {
 		this.name = name;
 		this.description = description;
 		this.price = price;
 		this.scheduledDate = scheduledDate;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public String getDescription() {
+		return description;
+	}
+	
+	public Instant getScheduledDate() {
+		return scheduledDate;
 	}
 	
 }

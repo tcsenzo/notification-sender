@@ -23,5 +23,9 @@ public class EventListDTO {
 	public boolean isEmpty() {
 		return eventDTOs.isEmpty();
 	}
+
+	public List<EventDTO> getItems() {
+		return eventDTOs;
+	}
 	
 }
